@@ -8,9 +8,9 @@ function slideCard(cardElement) {
 
 //For smooth transition when is nav bar is clicked.
 function smoothScroll(targetId) {
-    Event.preventDefault();
+    event.preventDefault();
     const target = document.getElementById(targetId);
     target.scrollIntoView({
       behavior: 'smooth'
           });
-        }
+      }
