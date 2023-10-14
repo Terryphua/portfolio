@@ -14,7 +14,7 @@
                 <li><a href="#home" onclick="smoothScroll('home')">Home</a></li>
                 <li><a href="#portfolio" onclick="smoothScroll('portfolio')">Portfolio</a></li>
                 <li><a href="#about" onclick="smoothScroll('about')">About Me</a></li>
-                <li><a href="#contact" onclick="smoothScroll('contact')">Contact</a></li>                
+                <li><a href="#contact" onclick="smoothScroll('contact')">Contact</a></li>
             </ul>
         </nav>
         <section id="home">
@@ -25,18 +25,18 @@
         <section id="portfolio">
             <h2>Portfolio</h2>
             <div class="slider">
-                <div class="card" onclick="slideCard(this)">
+                <a href="https://example1.com" target="_blank" class="card">
                     <img src="https://via.placeholder.com/150" alt="Project 1">
                     <p>Project 1</p>
-                </div>
-                <div class="card" onclick="slideCard(this)">
+                </a>
+                <a href="https://example2.com" target="_blank" class="card">
                     <img src="https://via.placeholder.com/150" alt="Project 2">
                     <p>Project 2</p>
-                </div>
-                <div class="card" onclick="slideCard(this)">
+                </a>
+                <a href="https://example3.com" target="_blank" class="card">
                     <img src="https://via.placeholder.com/150" alt="Project 3">
                     <p>Project 3</p>
-                </div>
+                </a>
             </div>
         </section>
         <section id="about">
@@ -52,5 +52,14 @@
             <p>&copy; 2023 My Portfolio. All rights reserved.</p>
         </footer>
     </div>
+    <script>
+        function smoothScroll(targetId) {
+            event.preventDefault();
+            const target = document.getElementById(targetId);
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>

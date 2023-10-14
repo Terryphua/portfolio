@@ -90,8 +90,8 @@ p {
 
 .card {
     width: 150px;
-    border: 1px solid #6c63ff; 
-    border-radius: 20px;
+    border: 1px solid #6c63ff;
+    border-radius: 5px;
     padding: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
