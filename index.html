@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <button class="animated-btn">Click Me</button>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="slider">
+                <div class="card" onclick="slideCard(this)">
+                    <img src="https://via.placeholder.com/150" alt="Project 1">
+                    <p>Project 1</p>
+                </div>
+                <div class="card" onclick="slideCard(this)">
+                    <img src="https://via.placeholder.com/150" alt="Project 2">
+                    <p>Project 2</p>
+                </div>
+                <div class="card" onclick="slideCard(this)">
+                    <img src="https://via.placeholder.com/150" alt="Project 3">
+                    <p>Project 3</p>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>A brief introduction about myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img src="https://via.placeholder.com/150" alt="About Me">
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <footer>
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
