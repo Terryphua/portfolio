@@ -1,72 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Terry's Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#home" onclick="smoothScroll('home')">Home</a></li>
-                <li><a href="#portfolio" onclick="smoothScroll('portfolio')">Portfolio</a></li>
-                <li><a href="#about" onclick="smoothScroll('about')">About Me</a></li>
-                <li><a href="#contact" onclick="smoothScroll('contact')">Contact</a></li>
-            </ul>
-        </nav>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-            <button class="animated-btn">Click Me</button>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="slider">
-                <a href="https://example1.com" target="_blank" class="card">
-                    <img src="https://via.placeholder.com/150" alt="Project 1">
-                    <p>Project 1</p>
-                </a>
-                <a href="https://example2.com" target="_blank" class="card">
-                    <img src="https://via.placeholder.com/150" alt="Project 2">
-                    <p>Project 2</p>
-                </a>
-                <a href="https://example3.com" target="_blank" class="card">
-                    <img src="https://via.placeholder.com/150" alt="Project 3">
-                    <p>Project 3</p>
-                </a>
-            </div>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>A brief introduction about myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <img src="https://via.placeholder.com/150" alt="About Me">
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch with me. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </section>        
-        <footer>
-            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
-        </footer>
+    <div class="bg-wash" aria-hidden="true"></div>
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    
+    <header class="nav" id="siteNav">
+        <div class="container nav-inner">
+            <a class="brand" href="#top" aria label="Home">
+                <span class="dot" aria-hidden="true"></span>
+                <span>TPCH's PORTFOLIO</span>
+            </a>
+            
+            
+            <!-------------------------- NAV BAR --------------------->
+
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">
+                <span aria-hidden="true"></span>
+            </button>
+            
+            <nav class="nav-links" id="primaryNav" aria-label="Primary">
+                <a href="#projects" data-nav="projects">Projects</a>
+                <a href="#about" data-nav="about">About</a>
+                <a href="#experience" data-nav="experience">Experience</a>
+                <a href="#contact" data-nav="contact">Contact</a>
+            </nav>
+
+             <!-------------------------- END OF NAV BAR --------------------->
+            
+            
+            
+            <div class="right-actions">
+                <div class="palette" aria-label="Theme colors">
+          <button class="palette-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change accent color">
+            <span class="swatch" data-swatch="a" aria-hidden="true"></span>
+            <span class="swatch" data-swatch="b" aria-hidden="true"></span>
+            <span class="swatch" data-swatch="c" aria-hidden="true"></span>
+          </button>
+          <div class="palette-pop" role="menu" aria-label="Accent color options">
+            <button type="button" class="palette-item" data-theme="forest" role="menuitem"><span class="dot" style="--c:#0f766e"></span><span>Forest</span></button>
+            <button type="button" class="palette-item" data-theme="ink" role="menuitem"><span class="dot" style="--c:#111827"></span><span>Ink</span></button>
+            <button type="button" class="palette-item" data-theme="indigo" role="menuitem"><span class="dot" style="--c:#4f46e5"></span><span>Indigo</span></button>
+            <button type="button" class="palette-item" data-theme="clay" role="menuitem"><span class="dot" style="--c:#b45309"></span><span>Clay</span></button>
+          </div>
+        </div>
+
+        <a class="btn" href="#contact">Contact</a>
+      </div>
     </div>
-    <script>
-        function smoothScroll(targetId) {
-            event.preventDefault();
-            const target = document.getElementById(targetId);
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    </script>
+  </header>
+
+
+
+
+
+
+
+
+    
+  <main id="top">
+    <div class="container">
+      <section class="hero">
+        <!-- HERO IMAGE (optional) -->
+        <!-- Recommended: 800×800 or 1000×1000 (square), JPG/WEBP, < 300KB -->
+        <img class="hero-img" src="https://picsum.photos/50" alt="Hero image placeholder" />
+        <div class="kicker reveal" data-parallax="0.18">Minimal / clean • animated background</div>
+        <h1 id="heroTitle" class="h1 reveal" data-parallax="0.28">Design work  that’s  clear,<br/>simple, and intentional.</h1>
+        <p class="sub reveal" data-parallax="0.22">I work across web design, branding, social content, and 3D. This site is built to showcase my skills for future opportunities and collaborations.</p>
+        <div class="hero-actions reveal" data-parallax="0.16">
+          <a class="btn" href="#projects">View projects</a>
+          <a class="btn" href="#about">About</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </section>
+    </div>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-title reveal">Selected work</div>
+        <h2 class="h2 reveal">Selected Projects</h2>
+        <p class="lead reveal">A small selection of work across branding, web, and social design. Replace placeholders with links/screenshots when ready.</p>
+
+        <div class="grid">
+          <article class="card half reveal">
+            <!-- PROJECT THUMBNAIL (placeholder) -->
+            <!-- Recommended: 1600×1000 (16:10) or 1200×800, JPG/WEBP, < 400KB -->
+            <img class="card-img" src="https://picsum.photos/seed/susfeed/1600/1000" alt="SUSFeedSG project preview placeholder" />
+            <div class="meta"><span>SUSFeedSG</span><span>Brand + Web + Social</span></div>
+            <h3>Brand Creative Lead</h3>
+            <p>Visual identity + social presence across Instagram, Facebook, and TikTok. Logo, website visuals, and a consistent content system.</p>
+            <p class="muted" style="margin-top:6px">Focus: building a cohesive brand system that improves recognition and consistency across platforms.</p>
+              <br>
+            <div class="pill-row"><span class="pill">Logo</span><span class="pill">Website</span><span class="pill">Social content</span><span class="pill">Creative direction</span></div>
+            <div class="links">
+              <a class="btn" href="https://www.susfeed.net/" target="_blank" rel="noreferrer">Website</a>
+              <a class="btn" href="https://www.instagram.com/susfeedsg/" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </article>
+
+          <article class="card half reveal">
+            <!-- PROJECT THUMBNAIL (placeholder) -->
+            <!-- Recommended: 1600×1000 (16:10) or 1200×800, JPG/WEBP, < 400KB -->
+            <img class="card-img" src="https://picsum.photos/seed/unitedsports/1600/1000" alt="United Sports website preview placeholder" />
+            <div class="meta"><span>United Sports</span><span>Website</span></div>
+            <h3>Contractor Company Website</h3>
+            <p>Designed a clean, professional website structure with clear navigation, services presentation, and calls-to-action.</p>
+            <p class="muted" style="margin-top:6px">Focus: clarity, trust, and conversion for a contractor audience.</p>
+              <br>
+              <br>
+            <div class="pill-row"><span class="pill">Web design</span><span class="pill">Layout</span><span class="pill">Brand styling</span></div>
+            <div class="links">
+              <a class="btn" href="[PLACEHOLDER LIVE LINK]" target="_blank" rel="noreferrer">Live link</a>
+              <a class="btn" href="[PLACEHOLDER FIGMA LINK]" target="_blank" rel="noreferrer">Figma</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <!-- PROJECT THUMBNAIL (placeholder) -->
+            <!-- Recommended: 1600×1000 (16:10) or 1200×800, JPG/WEBP, < 400KB -->
+            <div class="meta"><span>SusfeedSG</span><span>Startup</span></div>
+            <h3>Website + Logo + Visual System</h3>
+            <p>End-to-end design support: website design, logo, and overall style direction across brand touchpoints.</p>
+            <div class="links"><a class="btn" href="[PLACEHOLDER DRIVE/PORTFOLIO LINK]" target="_blank" rel="noreferrer">Screenshots / assets</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title reveal">Profile</div>
+        <h2 class="h2 reveal">About</h2>
+        <p class="lead reveal">I’m a multidisciplinary designer with a background in immersive media, web design, branding, social media content, and 3D modeling. I like clean visuals and practical systems that scale.</p>
+
+        <div class="grid">
+          <div class="card half reveal">
+            <div class="section-title">Education</div>
+            <h3>Diploma in Immersive Media</h3>
+            <p>Ngee Ann Polytechnic — <strong>GPA 3.6 / 4.0</strong></p>
+            <p>Director’s List: <strong>AY2021/2022</strong>, <strong>AY2022/2023</strong></p>
+
+            <details class="proof" style="margin-top:10px">
+              <summary class="btn" style="padding:6px 12px; font-size:13px; cursor:pointer">View academic record</summary>
+              <div style="margin-top:10px; color:var(--muted); font-size:14px">
+                <p>• Official transcript / Director’s List certificates</p>
+                <p>• Available upon request or can be shared privately</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="card half reveal">
+            <div class="section-title">Now</div>
+            <h3>Incoming SMU Student</h3>
+            <p>Information Systems — building my own web portfolio to bridge design + tech.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="section-title">Earlier Leadership</div>
+            <p>President of Green Club, Student Council member, and Camp Instructor.</p>
+            <p class="muted">Developed early leadership, teamwork, and facilitation skills through organizing activities, guiding peers, and supporting school events.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="section-title">Skills</div>
+            <div class="pill-row">
+              <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">3D Modeling</span><span class="pill">3D Animation</span><span class="pill">Substance Painter</span><span class="pill">Web Design</span><span class="pill">Branding</span><span class="pill">Social Media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+<!-------------------------- THIS IS FOR EXPERIENCE SECTION --------------------->
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title reveal">Background</div>
+        <h2 class="h2 reveal">Experience</h2>
+        <p class="lead reveal">Quick overview. You can expand any item later into a full case study.</p>
+
+        <div class="grid">
+          <article class="card reveal"><div class="experience-header">
+                <div class="company">
+                  <img
+                    class="company-logo"
+                    src="https://picsum.photos/200"
+                    alt="SUSFeedSG logo placeholder"
+                  />
+                  <span>SUSFeedSG</span>
+                </div>
+                <span>Nov 2025 – Present</span>
+              </div>
+              <h3>Brand Creative Lead (Self-employed)</h3><p>Led visual identity and social media presence across Instagram, Facebook, and TikTok.</p></article>
+
+            <article class="card reveal"><div class="experience-header">
+                <div class="company">
+                  <img
+                    class="company-logo"
+                    src="https://picsum.photos/200"
+                    alt="SUSFeedSG logo placeholder"
+                  />
+                  <span>HelloHolo</span>
+                </div>
+                <span>Sep 2023 – Jan 2024</span>
+              </div>
+              <h3>3D Artist (Internship)</h3><p>3D modeling, animation, and texturing (Substance Painter) in a hybrid team environment.</p></article>
+
+
+            <article class="card reveal"><div class="experience-header">
+                <div class="company">
+                  <img
+                    class="company-logo"
+                    src="https://picsum.photos/200"
+                    alt="SUSFeedSG logo placeholder"
+                  />
+                  <span>Ascent Group Singapore</span>
+                </div>
+                <span>Oct 2022 – Jan 2023</span>
+              </div>
+              <h3>Freelance Graphic Designer</h3><p>Designed digital materials and supported brand visuals for client deliverables.</p></article> 
+
+            
+
+            <article class="card reveal"><div class="experience-header">
+                <div class="company">
+                  <img
+                    class="company-logo"
+                    src="https://picsum.photos/200"
+                    alt="SUSFeedSG logo placeholder"
+                  />
+                  <span>United Sports Pte Ltd</span>
+                </div>
+                <span>Oct 2020 – Dec 2020</span>
+              </div>
+              <h3>Freelance Contractor (Part-time)</h3><p>Website design and visual support for a contractor company.</p></article> 
+
+            
+
+          <article class="card reveal"><div class="meta"><span>Carousell</span><span>Jan 2019 – Nov 2025</span></div><h3>Independent Entrepreneur (Freelance)</h3><p>Trading/reselling operations: research, procurement, customer communication, negotiation, and delivery coordination.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title reveal">Contact</div>
+        <h2 class="h2 reveal">Let’s connect</h2>
+        <p class="lead reveal">Open to opportunities, collaborations, and project chats.</p>
+
+        <div class="grid">
+          <div class="card half reveal"><h3>Email</h3><p><a href="mailto:[PLACEHOLDER EMAIL]">[PLACEHOLDER EMAIL]</a></p></div>
+          <div class="card half reveal"><h3>Links</h3><p><a href="[PLACEHOLDER LINKEDIN]" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="[PLACEHOLDER INSTAGRAM]" target="_blank" rel="noreferrer">Instagram</a></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+    
+<!-------------------------- END OF EXPERIENCE SECTION --------------------->
+
+
+
+
+
+    
+
+
+    
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center;">
+      <div>© <span id="y"></span> [YOUR NAME] — Designed & built by me.</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;"><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
